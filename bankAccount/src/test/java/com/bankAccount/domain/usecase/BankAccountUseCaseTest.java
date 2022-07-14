@@ -5,6 +5,11 @@ import org.junit.jupiter.api.Test;
 public class BankAccountUseCaseTest {
 	
 	
+	private BankAccountUse underTest;
+	
+	
+	
+	
 	// I need to create account to be able to perform operation with it
 	@Test
 	public void createAccountWithValidParams() {
