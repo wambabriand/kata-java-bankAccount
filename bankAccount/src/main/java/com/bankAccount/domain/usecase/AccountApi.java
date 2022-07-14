@@ -1,5 +1,12 @@
 package com.bankAccount.domain.usecase;
 
-public class AccountApi {
+import lombok.AllArgsConstructor;
+import lombok.Data;
 
+@AllArgsConstructor
+@Data
+public class AccountApi {
+	private Long id;
+	private String infoAccount;
+	private int balance;
 }

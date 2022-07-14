@@ -1,19 +1,32 @@
 package com.bankAccount.domain.usecase;
 
+import static org.assertj.core.api.Assertions.assertThat;
+
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+
+import com.bankAccount.domain.exceptions.AccountException;
 
 public class BankAccountUseCaseTest {
 	
 	
 	private BankAccountUse underTest;
 	
-	
+	@BeforeEach
+	private void initBankAccount() {
+		this.underTest= new BankAccountUse();
+	}
 	
 	
 	// I need to create account to be able to perform operation with it
 	@Test
-	public void createAccountWithValidParams() {
-		
+	public void createAccountWithValidParams() throws AccountException{
+		String validInfo = "valid infor";
+		AccountApi accountApi = underTest.createAccount(validInfo);
+		System.out.println(accountApi);
+		assertThat(accountApi.getId()).isPositive();
+		assertThat(accountApi.getInfoAccount()).isEqualTo(validInfo);
+		assertThat(accountApi.getBalance()).isEqualTo(0);
 	}
 	
 	@Test
