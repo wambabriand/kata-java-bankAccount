@@ -1,6 +1,6 @@
 # kata-java-bankAccount (HEXAGONAL ARCHITECHTURE)
 
-In this projet I used the HEXAGONAL ARCHITECHTURE. 
+In this projet I used the HEXAGONAL ARCHITECHTURE. I used H2 database
 
 # HOW TO TEST THESE APIs
 
