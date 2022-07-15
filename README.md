@@ -2,19 +2,19 @@
 
 In this projet I used the HEXAGONAL ARCHITECHTURE. 
 
-# HOW TO TEST THIS APIs
+# HOW TO TEST THESE APIs
 
 1-) FREE THE PORT 8080 OF YOUR MACHINE
 
 2-) LAUNCH APP AS ANY SPRING BOOT(MAVEN APP) in your local this is your BASE_URL = http://localhost:8080
 
-3-) FIRST API: allows you to create an account
+# 3-) FIRST API: allows you to create an account
 
-  URL  : BASE_URL/api/accounts
+#  URL  : BASE_URL/api/accounts
 
-  VERB : POST
+#  VERB : POST
   
-  PAYLOAD: json content example: { "infoAccount":"Wamba" }
+#  PAYLOAD: json content example: { "infoAccount":"Wamba" }
   
   RETURN VALUE: This can return null is case the creation failled(For security we don't provide reason) or This will create an account and return you 
   
@@ -24,13 +24,13 @@ In this projet I used the HEXAGONAL ARCHITECHTURE.
     "balance": 0
   }
   
-4-) SECOND API: allows you to do a deposit
+# 4-) SECOND API: allows you to do a deposit
   
-  URL  : BASE_URL/api/accounts/idAccount/operations . Where  idAccount is a Long representing your account id
+#  URL  : BASE_URL/api/accounts/idAccount/operations . Where  idAccount is a Long representing your account id
   
-  VERB : POST
+#  VERB : POST
   
-  PAYLOAD: json content example: { "amount": 10, "type":"DEPOSIT" } OR { "amount": 10, "type":"WITHDRAWAL" }
+#  PAYLOAD: json content example: { "amount": 10, "type":"DEPOSIT" } OR { "amount": 10, "type":"WITHDRAWAL" }
   
   RETURN VALUE: This can return null is case the operation failled(For security we don't provide reason) or this will return you json es:
   
@@ -50,11 +50,11 @@ In this projet I used the HEXAGONAL ARCHITECHTURE.
     "balance": 0
   }
 
-4-) THIRD API: allows you to do a deposit
+# 4-) THIRD API: allows you to do a deposit
 
-  URL  : BASE_URL/api/accounts/idAccount/operations . Where  idAccount is a Long representing your account id
+#  URL  : BASE_URL/api/accounts/idAccount/operations . Where  idAccount is a Long representing your account id
  
-  VERB : GET
+#  VERB : GET
   
   RETURN VALUE: This return a List of all your operations sorted in ASC order based on the date of the operation.
 
