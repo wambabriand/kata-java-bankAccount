@@ -30,16 +30,14 @@ public class BankController {
 	
 	private BankAccountUseCase bankAccountUseCase;
 	
-	public BankController(
-			OperationRepository operationRepository,  
-			AccountRepository accountRepository ) {
+	public BankController(OperationRepository operationRepository, AccountRepository accountRepository ) {
 		bankAccountUseCase = new BankAccountUseCase(new AccountAdapterImpl(accountRepository, operationRepository));
 	}
 	
-	@GetMapping("/api/accounts/{id}/operations")
-	public List<OperationApi> getOperations(@PathVariable Long id) {
+	@GetMapping("/api/accounts/{idAccount}/operations")
+	public List<OperationApi> getOperations(@PathVariable Long idAccount) {
 		try {
-			return bankAccountUseCase.getOperations(1L);
+			return bankAccountUseCase.getOperations(idAccount);
 		}catch (Exception e) {
 			System.out.println(e.getMessage());
 			return new ArrayList<OperationApi>();
@@ -52,6 +50,21 @@ public class BankController {
 	public AccountApi createAccount(@RequestBody AccountApi accountApi) {
 		try {
 			return bankAccountUseCase.createAccount(accountApi.getInfoAccount());
+		}catch (Exception e) {
+			return null;
+		}
+		
+	}
+	
+	@PostMapping("/api/accounts/{idAccount}/operations")
+	public OperationApi doDeposit(@RequestBody OperationApi operationApi, @PathVariable Long idAccount) {
+		try {
+			if(operationApi.getType().equals("DEPOSIT")) {
+				return bankAccountUseCase.doDeposit(idAccount, operationApi.getAmount());
+			} else if(operationApi.getType().equals("WITHDRAWAL")) {
+				return bankAccountUseCase.doWithdrawal(idAccount, operationApi.getAmount());
+			}
+			return null;
 		}catch (Exception e) {
 			System.out.println(e.getMessage());
 			return null;
