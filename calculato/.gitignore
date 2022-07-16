@@ -1,20 +1,8 @@
 HELP.md
-**/target/
 target/
 !.mvn/wrapper/maven-wrapper.jar
 !**/src/main/**/target/
 !**/src/test/**/target/
-
-bankAccount/.mvn/wrapper/maven-wrapper.properties
-bankAccount/.mvn/wrapper/maven-wrapper.jar
-bankAccount/mvnw
-
-
-
-calculato/.mvn/wrapper/maven-wrapper.properties
-calculato/.mvn/wrapper/maven-wrapper.jar
-calculato/mvnw
-
 
 ### STS ###
 .apt_generated
