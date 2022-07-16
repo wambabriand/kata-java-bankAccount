@@ -1,11 +1,11 @@
-#This repo has 2 spring boot projets.
+# This repo has 2 spring boot projets. BankAccount and Calculator
 
 # Calculator
 Launch the app as sprig app use this api to add two number
 ex: http://localhost:8080/api/calculator?equation=1;2
 
 
-# kata-java-bankAccount (HEXAGONAL ARCHITECHTURE)
+# BankAccount (HEXAGONAL ARCHITECHTURE)
 
 For BankAccount I used the HEXAGONAL ARCHITECHTURE. I used H2 database
 
